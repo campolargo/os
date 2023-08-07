@@ -52,14 +52,14 @@ class PDF extends FPDF {
 		// Title - Line 1: Company name & OS
 		$this->Cell(20);
 		$this->SetFont('Arial','B',12);
-		$this->Cell(90,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
+		$this->Cell(90,5,'Prefeitura Municipal de Campo Largo',0,0,'C');
 		$this->Cell(20,5,"",0,0,'C');
 		$this->Cell(33,5,"",0,0,'C');
 
 		// Title - Line 2: Phone number & OS Number
 		$this->Ln();
 		$this->Cell(50);
-		$this->Cell(90,5,utf8_decode(strip_tags(htmlspecialchars_decode("$TelefonePlugin"))),0,0,'C');
+		$this->Cell(90,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
 		$this->SetFont('Arial','B',12);
 		$this->Cell(33,5,utf8_decode("OS Nº"),0,0,'C');
 		$this->Cell(20,5,"",0,0,'C');
@@ -69,7 +69,7 @@ class PDF extends FPDF {
 		$this->SetFont('Arial','',10);
 		$this->SetTextColor(1,0,0);
 		$this->Cell(50);
-		$this->Cell(90,5,"CNPJ: $CnpjPlugin",0,0,'C');
+		$this->Cell(90,5,utf8_decode(strip_tags(htmlspecialchars_decode("$TelefonePlugin"))),0,0,'C');
 		$this->SetFont('Arial','B',14);
 		$this->SetTextColor(250,0,0);
 		$this->Cell(33,5,"$OsId",0,0,'C');
@@ -91,16 +91,6 @@ class PDF extends FPDF {
 		$this->Cell(20,5,"",0,0,'C');
 		$this->Ln(20);
 	}
-// Page footer
-function Footer()
-	{
-		// Position at 1.5 cm from bottom
-		$this->SetY(-15);
-		// Arial italic 8
-		$this->SetFont('Arial','I',8);
-		// Page number
-		$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-	}
 }
 // Instanciation of inherited class
 $pdf = new PDF();
@@ -113,9 +103,9 @@ $pdf->SetFont('Arial','B',10);
 $pdf->Cell(190,4,utf8_decode("DADOS DO CLIENTE"),1,1,'C',1);
 $pdf->Cell(1);
 $pdf->SetFont('Arial','B',9);
-$pdf->Cell(23,5,utf8_decode("Empresa:"),1,0,'L');
+$pdf->Cell(23,5,utf8_decode("Localização:"),1,0,'L');
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(167,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EntidadeName"))),1,0,'L');
+$pdf->Cell(167,5,utf8_decode(strip_tags(htmlspecialchars_decode("$Locations"))),1,0,'L');
 $pdf->SetFont('Arial','B',10);
 $pdf->Ln();
 $pdf->Cell(1);
@@ -125,27 +115,17 @@ $pdf->Cell(77,5,"$UserName",1,0,'L');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(20,5,utf8_decode("Telefone:"),1,0,'L');
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(70,5,"$EntidadePhone",1,0,'L');
+$pdf->Cell(70,5,"$UserTelefone",1,0,'L');
 $pdf->Ln();
 $pdf->Cell(1);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(23,5,utf8_decode("Endereço:"),1,0,'L');
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(77,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EntidadeEndereco"))),1,0,'L');
+$pdf->Cell(77,5,utf8_decode(strip_tags(htmlspecialchars_decode("$UserEndereco"))),1,0,'L');
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(20,5,utf8_decode("E-mail:"),1,0,'L');
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(70,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EntidadeEmail"))),1,0,'L');
-$pdf->Ln();
-$pdf->Cell(1);
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(23,5,"CNPJ:",1,0,'L');
-$pdf->SetFont('Arial','',10);
-$pdf->Cell(77,5,"$EntityRn",1,0,'L');
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(20,5,"CEP:",1,0,'L');
-$pdf->SetFont('Arial','',10);
-$pdf->Cell(70,5,"$EntidadeCep",1,0,'L');
+$pdf->Cell(70,5,utf8_decode(strip_tags(htmlspecialchars_decode("$UserEmail"))),1,0,'L');
 $pdf->Ln();
 // SO details
 $pdf->setFillColor(230,230,230);
@@ -207,19 +187,6 @@ if ( $ItensId == null ) {
 		$pdf->Ln();
 	}
 }
-//Cost
-if ( $CustoTotalFinal == 0 ) {
-} else {
-	$pdf->Cell(1);
-	$pdf->SetFont('Arial','B',10);
-	$pdf->Cell(190,4,utf8_decode("CUSTOS"),1,1,'C',1);
-	$pdf->Cell(1);
-	$pdf->SetFont('Arial','B',10);
-	$pdf->Cell(14,5,utf8_decode("Total:"),1,0,'L');
-	$pdf->SetFont('Arial','',10);
-	$pdf->Cell(176,5,utf8_decode(strip_tags(htmlspecialchars_decode("$CustoTotalFinal"))),1,0,'L');
-	$pdf->Ln();
-}
 // Description
 $pdf->setFillColor(230,230,230);
 $pdf->Cell(1);
@@ -271,7 +238,7 @@ $pdf->Cell(1);
 $pdf->SetFont('Arial','',7);
 $pdf->Cell(95,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
 $pdf->SetFont('Arial','',7);
-$pdf->Cell(95,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EntidadeName"))),0,0,'C');
+$pdf->Cell(95,5,utf8_decode(strip_tags(htmlspecialchars_decode("$Locations"))),0,0,'C');
 // QR Code
 $url = $CFG_GLPI['url_base'];
 $url2 = "/front/ticket.form.php?id=".$_GET['id']."";
