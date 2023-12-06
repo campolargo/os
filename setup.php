@@ -43,7 +43,6 @@ function plugin_init_os() {
   Plugin::registerClass('PluginOsConfig', ['addtabon' => ['Ticket']]);
   Plugin::registerClass('PluginOsConfig', ['addtabon' => ['Entity']]);
 
-  $PLUGIN_HOOKS["menu_toadd"]['os'] = array('plugins'  => 'PluginOsConfig');
   $PLUGIN_HOOKS['config_page']['os'] = 'front/index.php';
 }
 
