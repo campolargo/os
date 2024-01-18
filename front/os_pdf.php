@@ -59,7 +59,7 @@ class PDF extends FPDF {
 		$this->Ln();
 		$this->Cell(50);
 		$this->SetFont('Arial','B',9);
-		$this->Cell(90,5,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
+		$this->Cell(90,3,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
 		$this->SetFont('Arial','B',9);
 		$this->Cell(33,3,utf8_decode("OS Nº"),0,0,'C');
 		$this->Cell(20,3,"",0,0,'C');
