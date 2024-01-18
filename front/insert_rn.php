@@ -2,8 +2,8 @@
 /*
    ------------------------------------------------------------------------
    Plugin OS
-   Copyright (C) 2016-2022 by Junior Marcati
-   https://github.com/juniormarcati/glpi_os
+   Copyright (C) 2016-2024 by Junior Marcati
+   https://github.com/juniormarcati/os
    ------------------------------------------------------------------------
    LICENSE
    This file is part of Plugin OS project.
@@ -21,10 +21,10 @@
    @package   Plugin OS
    @author    Junior Marcati
    @co-author
-   @copyright Copyright (c) 2016-2022 OS Plugin Development team
+   @copyright Copyright (c) 2016-2024 OS Plugin Development team
    @license   AGPL License 3.0 or (at your option) any later version
               http://www.gnu.org/licenses/agpl-3.0-standalone.html
-   @link      https://github.com/juniormarcati/glpi_os
+   @link      https://github.com/juniormarcati/os
    @since     2016
    ------------------------------------------------------------------------
  */
@@ -48,13 +48,8 @@ if(isset($_POST["rn"])) {
 		INSERT INTO glpi_plugin_os_rn (entities_id, rn) 
 		VALUES ('$ent_id', '$rn') 
 		ON DUPLICATE KEY UPDATE rn='$rn'";
-		
-		
-		// INSERT INTO glpi_plugin_os_rn (entities_id, rn) 
-		// VALUES ('$ent_id', '$rn') 
-		// ON DUPLICATE KEY UPDATE rn=('$rn')";			 
-	
-	$DB->query($insert) or die ("Error inserting rn");
+
+    $DB->query($insert) or die ("Error inserting rn");
 	
 	echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=".$CFG_GLPI['root_doc']."/front/entity.form.php?id=".$ent_id."'>";
 }
