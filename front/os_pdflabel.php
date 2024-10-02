@@ -47,51 +47,51 @@ $pdf->Image('../pics/logo_os.png',15,0,40);
 $pdf->Ln();
 // Title
 $pdf->SetFont('Arial','B',$titleSize);
-$pdf->Cell(50,6,utf8_decode("OS Nº $OsId"),0,0,'C');
+$pdf->Cell(50,6,mb_convert_encoding("OS Nº $OsId", "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->Ln();
 // Cabecalho
 $pdf->SetFont('Arial','B',$titleSizeCn);
-$pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$EmpresaPlugin")), "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
 $pdf->Cell(50,2.5,"CNPJ: $CnpjPlugin",0,0,'L');
 $pdf->Ln();
-$pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("FONE: $TelefonePlugin"))),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("FONE: $TelefonePlugin")), "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
-$pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("$EnderecoPlugin - $CidadePlugin"))),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$EnderecoPlugin - $CidadePlugin")), "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
-$pdf->Cell(50,2.5,utf8_decode("RESPONSÁVEL: $OsResponsavel"),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding("RESPONSÁVEL: $OsResponsavel", "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
 $pdf->Cell(50,1,"-------------------------------------------------------------",0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
-$pdf->Cell(50,2.5,utf8_decode("CLIENTE: $EntidadeName"),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding("CLIENTE: $EntidadeName", "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
-$pdf->Cell(50,2.5,utf8_decode("REQUERENTE: $UserName"),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding("REQUERENTE: $UserName", "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
-$pdf->Cell(50,2.5,utf8_decode("DATA: $DataOs"),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding("DATA: $DataOs", "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',$fontSize);
 $pdf->Cell(50,1,"-------------------------------------------------------------",0,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','b',$fontSize);
-$pdf->Cell(50,2.5,utf8_decode("ITENS"),0,0,'L');
+$pdf->Cell(50,2.5,mb_convert_encoding("ITENS", "ISO-8859-1", "UTF-8"),0,0,'L');
 $pdf->Ln();
 // Items
 if ( $ItensId == null ) {
 } else {
 	$pdf->SetFont('Arial','',$fontSize);
   if ( $ItemType == 'Computer' ) {
-    $pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("$ComputerName - $ComputerSerial"))),0,0,'L');
+    $pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$ComputerName - $ComputerSerial")), "ISO-8859-1", "UTF-8"),0,0,'L');
 		$pdf->Ln();
 	} else if ( $ItemType == 'Monitor' ) {
-		$pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("$MonitorName - $MonitorSerial"))),0,0,'L');
+		$pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$MonitorName - $MonitorSerial")), "ISO-8859-1", "UTF-8"),0,0,'L');
 		$pdf->Ln();
 	} else if ( $ItemType == 'Printer' ) {
-		$pdf->Cell(50,2.5,utf8_decode(strip_tags(htmlspecialchars_decode("$PrinterName - $PrinterSerial"))),0,0,'L');
+		$pdf->Cell(50,2.5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$PrinterName - $PrinterSerial")), "ISO-8859-1", "UTF-8"),0,0,'L');
 		$pdf->Ln();
 	}
 }
