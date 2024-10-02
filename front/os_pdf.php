@@ -59,9 +59,9 @@ class PDF extends FPDF {
 		$this->Ln();
 		$this->Cell(50);
 		$this->SetFont('Arial','B',9);
-		$this->Cell(90,3,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
+		$this->Cell(90,3,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$EmpresaPlugin")), "ISO-8859-1", "UTF-8"),0,0,'C');
 		$this->SetFont('Arial','B',9);
-		$this->Cell(33,3,utf8_decode("OS Nº"),0,0,'C');
+		$this->Cell(33,3,mb_convert_encoding("OS Nº", "ISO-8859-1", "UTF-8"),0,0,'C');
 		$this->Cell(20,3,"",0,0,'C');
 
 		// Title - Line 3: Company registration number & Os date
@@ -69,7 +69,7 @@ class PDF extends FPDF {
 		$this->SetFont('Arial','',9);
 		$this->SetTextColor(0,0,0);
 		$this->Cell(50);
-		$this->Cell(90,3,utf8_decode(strip_tags(htmlspecialchars_decode("$TelefonePlugin"))),0,0,'C');
+		$this->Cell(90,3,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$TelefonePlugin")), "ISO-8859-1", "UTF-8"),0,0,'C');
 		$this->SetFont('Arial','B',11);
 		$this->SetTextColor(250,0,0);
 		$this->Cell(33,3,"$OsId",0,0,'C');
@@ -80,7 +80,7 @@ class PDF extends FPDF {
 		// Title - Line 4: Company address
 		$this->Cell(50);
 		$this->SetFont('Arial','',9);
-		$this->Cell(90,3,utf8_decode(strip_tags(htmlspecialchars_decode("$EnderecoPlugin - $CidadePlugin"))),0,0,'C');
+		$this->Cell(90,3,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$EnderecoPlugin - $CidadePlugin")), "ISO-8859-1", "UTF-8"),0,0,'C');
 		$this->Cell(33,3,"$DataOs",0,0,'C');
 		$this->Cell(20,3,"",0,0,'C');
 		$this->Image('../pics/qr.png',180,10,22);
@@ -115,34 +115,34 @@ $pdf->SetDrawColor(75,75,85);
 $pdf->setFillColor(55,55,64);
 $pdf->SetFont('Arial','B',9);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(190,5,utf8_decode("Dados do cliente"),1,0,'C',true);
+$pdf->Cell(190,5,mb_convert_encoding("Dados do cliente", "ISO-8859-1", "UTF-8"),1,0,'C',true);
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255, 255, 255);
-$pdf->Cell(23,4,utf8_decode("Localização"),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding("Localização", "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->Cell(167,4,utf8_decode(strip_tags(htmlspecialchars_decode("$Locations"))),1,0,'L');
+$pdf->Cell(167,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$Locations")), "ISO-8859-1", "UTF-8"),1,0,'L');
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
 $pdf->Ln();
-$pdf->Cell(23,4,utf8_decode(__("Requester")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Requester"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->Cell(72,4,utf8_decode("$UserName"),1,0,'L');
+$pdf->Cell(72,4,mb_convert_encoding("$UserName", "ISO-8859-1", "UTF-8"),1,0,'L');
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(20,4,utf8_decode(__("Phone")),1,0,'L',true);
+$pdf->Cell(20,4,mb_convert_encoding(__("Phone"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
 $pdf->Cell(75,4,"$UserTelefone",1,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(23,4,utf8_decode(__("Address")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Address"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',6);
 $pdf->SetTextColor(0,0,0);
-$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$UserEndereco"))),1,0,'L');
+$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$UserEndereco")), "ISO-8859-1", "UTF-8"),1,0,'L');
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
 $pdf->Cell(20,4,"CEP",1,0,'L',true);
@@ -152,37 +152,37 @@ $pdf->Cell(75,4,"$UserCep",1,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(23,4,utf8_decode(__("Email")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Email"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$UserEmail"))),1,0,'L');
+$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$UserEmail")), "ISO-8859-1", "UTF-8"),1,0,'L');
 $pdf->Ln();
 // Details
 $pdf->SetFont('Arial','B',9);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(190,5,utf8_decode("Detalhes do chamado"),1,0,'C',true);
+$pdf->Cell(190,5,mb_convert_encoding("Detalhes do chamado", "ISO-8859-1", "UTF-8"),1,0,'C',true);
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(23,4,utf8_decode(__("Title")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Title"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->MultiCell(167,4,utf8_decode(strip_tags(htmlspecialchars_decode("$OsNome"))),1,0);
+$pdf->MultiCell(167,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$OsNome")), "ISO-8859-1", "UTF-8"),1,0);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(23,4,utf8_decode(__("Technician")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Technician"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->Cell(167,4,utf8_decode(strip_tags(htmlspecialchars_decode("$OsResponsavel"))),1,0,'L');
+$pdf->Cell(167,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$OsResponsavel")), "ISO-8859-1", "UTF-8"),1,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(23,4,utf8_decode(__("Start date")),1,0,'L',true);
+$pdf->Cell(23,4,mb_convert_encoding(__("Start date"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
 $pdf->Cell(72,4,"$OsData",1,0,'L');
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(20,4,utf8_decode(__("Closure")),1,0,'L',true);
+$pdf->Cell(20,4,mb_convert_encoding(__("Closure"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
 $pdf->Cell(75,4,"$OsDataEntrega",1,0,'L');
@@ -192,92 +192,92 @@ if ( $ItensId == null ) {
 } else {
 	$pdf->SetFont('Arial','B',9);
 	$pdf->SetTextColor(255,255,255);
-	$pdf->Cell(190,5,utf8_decode(__("Linked item")),1,0,'C',true);
+	$pdf->Cell(190,5,mb_convert_encoding(__("Linked item"), "ISO-8859-1", "UTF-8"),1,0,'C',true);
 	$pdf->Ln();
 	$pdf->SetFont('Arial','',8);
 	$pdf->SetTextColor(255,255,255);
-	$pdf->Cell(23,4,utf8_decode(__("Name")),1,0,'L',true);
+	$pdf->Cell(23,4,mb_convert_encoding(__("Name"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 	$pdf->SetFont('Arial','',8);
 	if ( $ItemType == 'Computer' ) {
 		$pdf->SetTextColor(0,0,0);
-		$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$ComputerName"))),1,0,'L');
+		$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$ComputerName")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->SetFont('Arial','',8);
 		$pdf->SetTextColor(255,255,255);
-		$pdf->Cell(23,4,utf8_decode(__("Serial Number")),1,0,'L',true);
+		$pdf->Cell(23,4,mb_convert_encoding(__("Serial Number"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 		$pdf->SetFont('Arial','',8);
 		$pdf->SetTextColor(0,0,0);
-		$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$ComputerSerial"))),1,0,'L');
+		$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$ComputerSerial")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->Ln();
 	} else if ( $ItemType == 'Monitor' ) {
 		$pdf->SetTextColor(0,0,0);
-		$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$MonitorName"))),1,0,'L');
+		$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$MonitorName")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->SetFont('Arial','',8);
 		$pdf->SetTextColor(255,255,255);
-		$pdf->Cell(20,4,utf8_decode(__("Serial Number")),1,0,'L',true);
+		$pdf->Cell(20,4,mb_convert_encoding(__("Serial Number"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 		$pdf->SetTextColor(0,0,0);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(75,4,utf8_decode(strip_tags(htmlspecialchars_decode("$MonitorSerial"))),1,0,'L');
+		$pdf->Cell(75,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$MonitorSerial")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->Ln();
 	} else if ( $ItemType == 'Printer' ) {
 		$pdf->SetTextColor(0,0,0);
-		$pdf->Cell(72,4,utf8_decode(strip_tags(htmlspecialchars_decode("$PrinterName"))),1,0,'L');
+		$pdf->Cell(72,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$PrinterName")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->SetFont('Arial','',8);
 		$pdf->SetTextColor(255,255,255);
-		$pdf->Cell(20,4,utf8_decode(__("Serial Number")),1,0,'L',true);
+		$pdf->Cell(20,4,mb_convert_encoding(__("Serial Number"), "ISO-8859-1", "UTF-8"),1,0,'L',true);
 		$pdf->SetTextColor(0,0,0);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(75,4,utf8_decode(strip_tags(htmlspecialchars_decode("$PrinterSerial"))),1,0,'L');
+		$pdf->Cell(75,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$PrinterSerial")), "ISO-8859-1", "UTF-8"),1,0,'L');
 		$pdf->Ln();
 	}
 }
 // Description
 $pdf->SetFont('Arial','B',9);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(190,5,utf8_decode(__("Description")),1,0,'C',true);
+$pdf->Cell(190,5,mb_convert_encoding(__("Description"), "ISO-8859-1", "UTF-8"),1,0,'C',true);
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
-$pdf->Multicell(190,5,utf8_decode(strip_tags(htmlspecialchars_decode("$OsDescricao"))),1,'J');
+$pdf->Multicell(190,5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$OsDescricao")), "ISO-8859-1", "UTF-8"),1,'J');
 // Solution
 $pdf->SetFont('Arial','B',9);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(190,5,utf8_decode(__("Solution")),1,0,'C',true);
+$pdf->Cell(190,5,mb_convert_encoding(__("Solution"), "ISO-8859-1", "UTF-8"),1,0,'C',true);
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->SetTextColor(0,0,0);
 // Lines if solution is empty
 if ( $OsSolucao == null ) {
 	$pdf->SetFont('Arial','',8);
-	$pdf->Cell(190,10,utf8_decode("Descreva a solução:"),0,0);
+	$pdf->Cell(190,10,mb_convert_encoding("Descreva a solução:", "ISO-8859-1", "UTF-8"),0,0);
 	$pdf->Ln(0);
-	$pdf->Cell(190,45,utf8_decode(""),1,0);
+	$pdf->Cell(190,45,mb_convert_encoding("", "ISO-8859-1", "UTF-8"),1,0);
 	$pdf->Ln();
 } else {
-	$pdf->MultiCell(190,5,utf8_decode(strip_tags(htmlspecialchars_decode("$OsSolucao"))),1,0);
+	$pdf->MultiCell(190,5,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$OsSolucao")), "ISO-8859-1", "UTF-8"),1,0);
 }
 // Signatures
 $pdf->SetFont('Arial','B',9);
 $pdf->SetTextColor(255,255,255);
-$pdf->Cell(190,5,utf8_decode("Assinaturas"),1,0,'C',true);
+$pdf->Cell(190,5,mb_convert_encoding("Assinaturas", "ISO-8859-1", "UTF-8"),1,0,'C',true);
 $pdf->Ln();
 $pdf->SetTextColor(0,0,0);
 // Signatures Lines
 $pdf->Cell(190,40,"",'LRB',0,'L');
 $pdf->SetY($pdf->GetY() +20);
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode("_______________________________________"),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding("_______________________________________", "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode("_______________________________________"),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding("_______________________________________", "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode(strip_tags(htmlspecialchars_decode("$OsResponsavel"))),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$OsResponsavel")), "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode(strip_tags(htmlspecialchars_decode("$UserName"))),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$UserName")), "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode(strip_tags(htmlspecialchars_decode("$EmpresaPlugin"))),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$EmpresaPlugin")), "ISO-8859-1", "UTF-8"),0,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(95,4,utf8_decode(strip_tags(htmlspecialchars_decode("$Locations"))),0,0,'C');
+$pdf->Cell(95,4,mb_convert_encoding(strip_tags(htmlspecialchars_decode("$Locations")), "ISO-8859-1", "UTF-8"),0,0,'C');
 // Output PDF
 $fileName = ''. $EmpresaPlugin .' - OS#'. $OsId .'.pdf';
 $pdf->Output('I',$fileName);
