@@ -611,113 +611,6 @@ class PluginOsfreeConfig extends CommonDBTM
           margin: 0 auto;
           overflow: hidden;
       }
-
-      .os-premium-banner {
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 18px;
-          padding: 14px 18px;
-          background: linear-gradient(135deg, #00BAC4, #23A455);
-          color: #ffffff;
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
-      }
-
-      .os-premium-banner::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at top right, rgba(255,255,255,0.28), transparent 55%);
-          opacity: 0.9;
-          pointer-events: none;
-      }
-
-      .os-premium-content {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-      }
-
-      .os-premium-eyebrow {
-          font-size: 0.75em;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          opacity: 0.8;
-      }
-
-      .os-premium-title {
-          font-size: 0.98em;
-          font-weight: 600;
-      }
-
-      .os-premium-desc {
-          font-size: 0.8em;
-          opacity: 0.9;
-          max-width: 460px;
-          margin-bottom: 8px;
-      }
-
-      .os-premium-footnote {
-          font-size: 0.75em;
-          opacity: 0.75;
-          margin-top: 4px;
-      }
-
-      .os-premium-features {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-      }
-
-      .os-premium-feature {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 10px;
-          background: rgba(255,255,255,0.14);
-          border-radius: 999px;
-          font-size: 0.78em;
-          letter-spacing: 0.01em;
-          transition: background 0.2s ease, transform 0.2s ease;
-      }
-
-      .os-premium-feature i {
-          font-size: 0.9em;
-      }
-
-      .os-premium-feature:hover {
-          background: rgba(255,255,255,0.24);
-          transform: translateY(-1px);
-      }
-
-      .os-premium-action {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 10px 20px;
-          background: rgba(255,255,255,0.14);
-          color: #ffffff;
-          text-decoration: none;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,0.22);
-          font-weight: 600;
-          font-size: 0.9em;
-          box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-          transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-      }
-
-      .os-premium-action i {
-          font-size: 0.95em;
-      }
-
-      .os-premium-action:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 18px 30px rgba(0,0,0,0.22);
-          background: rgba(255,255,255,0.22);
-      }
       
       .os-toolbar {
           display: flex;
@@ -851,26 +744,6 @@ class PluginOsfreeConfig extends CommonDBTM
       }
       
       @media screen and (max-width: 768px) {
-          .os-premium-banner {
-              flex-direction: column;
-              align-items: flex-start;
-              text-align: left;
-          }
-
-          .os-premium-features {
-              gap: 6px;
-          }
-
-          .os-premium-feature {
-              width: 100%;
-              justify-content: flex-start;
-          }
-
-          .os-premium-action {
-              width: 100%;
-              justify-content: center;
-          }
-
           .button-text {
               display: none; 
           }
@@ -985,25 +858,6 @@ class PluginOsfreeConfig extends CommonDBTM
   </style>";
 
         echo "<div class='os-container'>";
-
-        echo "<div class='os-premium-banner'>";
-        echo "<div class='os-premium-content'>";
-        echo "<span class='os-premium-eyebrow'>" . __('Premium', 'osfree') . "</span>";
-        echo "<div class='os-premium-title'>" . __('Upgrade Your Work Orders', 'osfree') . "</div>";
-        echo "<div class='os-premium-desc'>" . __('Experience a smarter workflow with these premium highlights:', 'osfree') . "</div>";
-        echo "<div class='os-premium-features'>";
-        echo "<span class='os-premium-feature'><i class='fas fa-coins'></i>" . __('Ticket cost insights', 'osfree') . "</span>";
-        echo "<span class='os-premium-feature'><i class='fas fa-pen-nib'></i>" . __('Digital signatures', 'osfree') . "</span>";
-        echo "<span class='os-premium-feature'><i class='fas fa-cubes'></i>" . __('Detailed ticket items', 'osfree') . "</span>";
-        echo "<span class='os-premium-feature'><i class='fas fa-sliders-h'></i>" . __('Advanced interface', 'osfree') . "</span>";
-        echo "</div>";
-        echo "<div class='os-premium-footnote'>" . __('Gain more accuracy, productivity, and professionalism across every operation.', 'osfree') . "</div>";
-        echo "</div>";
-        echo "<a class='os-premium-action' href='https://pluginos.marcati.com.br' target='_blank' rel='noopener'>";
-        echo "<i class='fas fa-star'></i><span>" . __('Discover Premium', 'osfree') . "</span>";
-        echo "</a>";
-        echo "</div>";
-
         echo "<div class='os-toolbar'>";
 
         echo "<div class='os-document-info'>";
