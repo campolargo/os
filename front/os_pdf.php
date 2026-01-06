@@ -401,7 +401,7 @@ try {
                                     </tr>
                                     <tr>
                                         <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . htmlspecialchars(UserTelefone) . '
+                                            ' . htmlspecialchars($UserTelefone) . '
                                         </td>
                                     </tr>
                                 </table>
