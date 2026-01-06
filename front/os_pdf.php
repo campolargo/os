@@ -329,9 +329,10 @@ try {
         
         <!-- Nome e dados (65%) -->
         <td style="width:65%; vertical-align: middle; text-align: center;">
+            <div style="font-size:12pt; font-weight:700; color:' . $accent . '; text-transform:uppercase; margin-bottom:2px; line-height:1;">Prefeitura Municipal de Campo Largo</div>
             <div style="font-size:12pt; font-weight:700; color:' . $accent . '; text-transform:uppercase; margin-bottom:2px; line-height:1;">' . htmlspecialchars($EmpresaPlugin) . '</div>
             <div style="font-size:7pt; color:' . $dark . '; line-height:1.1;">'
-        . sprintf(__('EIN: %1$s · Phone: %2$s · %3$s, %4$s', 'osfree'), htmlspecialchars($CnpjPlugin), htmlspecialchars($TelefonePlugin), htmlspecialchars($EnderecoPlugin), htmlspecialchars($CidadePlugin)) .
+        . sprintf('Telefone: %1$s · %2$s, %3$s', htmlspecialchars($TelefonePlugin), htmlspecialchars($EnderecoPlugin), htmlspecialchars($CidadePlugin)) .
         '</div>
         </td>
         
@@ -367,30 +368,16 @@ try {
                 <td style="padding:0 0 2px 0; width:100%;">
                     <table style="width:100%; border-collapse: separate; border-spacing: 2px 0;">
                         <tr>
-                            <td style="width:70%; padding:0;">
+                            <td style="padding:0;">
                                 <table style="width:100%; border-collapse: separate; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
                                     <tr>
                                         <td style="background-color: ' . $lighter . '; border: 1px solid ' . $medium . '; border-radius: 3px 3px 0 0; padding: 3px 6px; font-size: 7.5pt; font-weight: 600; color: ' . $secondary . ';">
-                                            ' . __('Customer', 'osfree') . '
+                                            Localização
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . cleanHtmlText($companyName) . '
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td style="width:30%; padding:0;">
-                                <table style="width:100%; border-collapse: separate; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
-                                    <tr>
-                                        <td style="background-color: ' . $lighter . '; border: 1px solid ' . $medium . '; border-radius: 3px 3px 0 0; padding: 3px 6px; font-size: 7.5pt; font-weight: 600; color: ' . $secondary . ';">
-                                            ' . htmlspecialchars($documentLabel) . '
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . htmlspecialchars($companyDocument) . '
+                                            ' . cleanHtmlText($Locations) . '
                                         </td>
                                     </tr>
                                 </table>
@@ -414,7 +401,7 @@ try {
                                     </tr>
                                     <tr>
                                         <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . htmlspecialchars($EntidadePhone) . '
+                                            ' . htmlspecialchars(UserTelefone) . '
                                         </td>
                                     </tr>
                                 </table>
@@ -428,7 +415,7 @@ try {
                                     </tr>
                                     <tr>
                                         <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . htmlspecialchars($EntidadeEmail) . '
+                                            ' . htmlspecialchars($UserEmail) . '
                                         </td>
                                     </tr>
                                 </table>
@@ -442,7 +429,7 @@ try {
                                     </tr>
                                     <tr>
                                         <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                            ' . htmlspecialchars($EntidadeCep) . '
+                                            ' . htmlspecialchars($UserCep) . '
                                         </td>
                                     </tr>
                                 </table>
@@ -463,7 +450,7 @@ try {
                         </tr>
                         <tr>
                             <td style="background-color: ' . $white . '; border: 1px solid ' . $medium . '; border-top: none; border-radius: 0 0 3px 3px; padding: 3px 6px; font-size: 8.5pt; color: ' . $secondary . '; height: 20px;">
-                                ' . htmlspecialchars($EntidadeEndereco) . '
+                                ' . htmlspecialchars($UserEndereco) . '
                             </td>
                         </tr>
                     </table>
