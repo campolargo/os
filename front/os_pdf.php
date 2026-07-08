@@ -330,7 +330,7 @@ try {
         <!-- Nome e dados (65%) -->
         <td style="width:65%; vertical-align: middle; text-align: center;">
             <div style="font-size:12pt; font-weight:700; color:' . $accent . '; text-transform:uppercase; margin-bottom:2px; line-height:1;">Prefeitura Municipal de Campo Largo</div>
-            <div style="font-size:12pt; font-weight:700; color:' . $accent . '; text-transform:uppercase; margin-bottom:2px; line-height:1;">' . htmlspecialchars($EmpresaPlugin) . '</div>
+            <div style="font-size:14pt; font-weight:700; color:' . $accent . '; text-transform:uppercase; margin-bottom:2px; line-height:1;">' . htmlspecialchars($EmpresaPlugin) . '</div>
             <div style="font-size:7pt; color:' . $dark . '; line-height:1.1;">'
         . sprintf('Telefone: %1$s · %2$s, %3$s', htmlspecialchars($TelefonePlugin), htmlspecialchars($EnderecoPlugin), htmlspecialchars($CidadePlugin)) .
         '</div>
@@ -343,12 +343,12 @@ try {
                     <td style="width:60%; vertical-align: middle; text-align:right; padding-right:4px;">
                         <div style="text-align:right;">
                             <div style="font-size:7pt; color:' . $dark . ';">' . __('WO Nº', 'osfree') . '</div>
-                            <div style="font-size:12pt; font-weight:700; color:' . $accent . '; line-height:1;">' . $OsId . '</div>
+                            <div style="font-size:14pt; font-weight:700; color:' . $accent . '; line-height:1;">' . $OsId . '</div>
                             <div style="font-size:7pt; color:' . $dark . ';">' . $DataOs . '</div>
                         </div>
                     </td>
                     <td style="width:40%; vertical-align: middle; text-align:center;">
-                        <img src="' . $qrCodeDataUri . '" style="width:52px; height:auto; display:block;" alt="QR Code">
+                        <img src="' . $qrCodeDataUri . '" style="width:62px; height:auto; display:block;" alt="QR Code">
                     </td>
                 </tr>
             </table>
